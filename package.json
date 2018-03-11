@@ -54,13 +54,16 @@
     "whatwg-fetch": "2.0.3",
     "postcss-assets": "^5.0.0",
     "postcss-inline-svg": "^3.0.0",
-    "serve": "^6.4.9"
+    "serve": "^6.4.9",
+    "react-styleguidist": "^6.2.7"
   },
   "scripts": {
     "start": "node scripts/start.js",
     "start-build": "node ./node_modules/serve/bin/serve.js -s build",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
   },
   "jest": {
     "collectCoverageFrom": [

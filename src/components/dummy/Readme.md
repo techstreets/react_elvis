@@ -1,0 +1,5 @@
+Dummy example:
+
+```js
+<Dummy />
+```

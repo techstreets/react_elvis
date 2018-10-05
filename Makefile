@@ -1,8 +1,8 @@
-IMAGE_NAME := techstreets/react_ejected
+IMAGE_NAME := techstreets/react_elvis
 IMAGE_TAG := 1.0.0
-CONTAINER_NAME := react_ejected
-ENV_FILE_NAME := react_ejected_env
-HOST_PORT := 8103
+CONTAINER_NAME := react_elvis
+ENV_FILE_NAME := react_elvis_env
+HOST_PORT := 8104
 APP_DIR := '/'
 
 mkfile_path := $(abspath $(lastword $(MAKEFILE_LIST)))

@@ -46,7 +46,7 @@
     //
     // The following rules point out areas where you might have made mistakes.
     //
-    "comma-dangle": 2, // disallow or enforce trailing commas
+    "comma-dangle": 0, // disallow or enforce trailing commas
     "no-cond-assign": 2, // disallow assignment in conditional expressions
     "no-console": ["error", { allow: ["warn", "error", "log"] }], // disallow use of console (off by default in the node environment)
     "no-constant-condition": 2, // disallow use of constant expressions in conditions
@@ -121,7 +121,7 @@
     "no-self-compare": 2, // disallow comparisons where both sides are exactly the same (off by default)
     "no-sequences": 2, // disallow use of comma operator
     "no-throw-literal": 2, // restrict what can be thrown as an exception (off by default)
-    "no-unused-expressions": 2, // disallow usage of expressions in statement position
+    "no-unused-expressions": 0, // disallow usage of expressions in statement position
     "no-void": 2, // disallow use of void operator (off by default)
     "no-warning-comments": [0, {"terms": ["todo", "fixme"], "location": "start"}], // disallow usage of configurable warning terms in comments": 2, // e.g. TODO or FIXME (off by default)
     "no-with": 2, // disallow use of the with statement
@@ -158,7 +158,7 @@
     //
     // These rules are purely matters of style and are quite subjective.
     //
-    "indent": [1, 2], // this option sets a specific tab width for your code (off by default)
+    "indent": ["error", 2, { "SwitchCase": 1 }], // this option sets a specific tab width for your code (off by default)
     "brace-style": 1, // enforce one true brace style (off by default)
     "camelcase": 0, // require camel case names
     "comma-spacing": [1, {"before": false, "after": true}], // enforce spacing before and after comma
@@ -226,7 +226,7 @@
     // React specific linting rules for ESLint
     //
     "react/display-name": 0, // Prevent missing displayName in a React component definition
-    "jsx-quotes": ["error", "prefer-single"], // Enforce quote style for JSX attributes
+    "jsx-quotes": ["error", "prefer-double"], // Enforce quote style for JSX attributes
     "react/jsx-no-undef": 2, // Disallow undeclared variables in JSX
     "react/jsx-sort-props": 0, // Enforce props alphabetical sorting
     "react/jsx-uses-react": 2, // Prevent React to be incorrectly marked as unused

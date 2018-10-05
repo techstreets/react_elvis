@@ -1,13 +1,16 @@
 import React from 'react';
 import styles from './app.css';
+import { Provider } from 'react-redux';
 import HomePage from './pages';
 
 
-const App = () => {
+const App = ({ store }) => {
   return (
-    <div className={styles.app}>
-      <HomePage />
-    </div>
+    <Provider store={store}>
+      <div className={styles.app}>
+        <HomePage />
+      </div>
+    </Provider>
   );
 };
 

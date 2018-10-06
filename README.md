@@ -17,10 +17,10 @@ The idea is to pack and combine most common libs in order to be able to quickly 
 - history
 - react-router
 - ~~react-router-redux~~ connected-react-router
+- axios
 
 ## What's not packed YET
 
-- axios
 - lodash
 - moment
 - redux-form

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 import App from './app';
 import registerServiceWorker from './registerServiceWorker';
 import createHistory from 'history/createHashHistory';
@@ -22,6 +23,15 @@ const store = createStore(
     eventsMiddleware
   ))
 );
+
+// on any unauthorized response go to login page
+axios.interceptors.response.use(null, error => {
+  const { status } = error.response;
+  if (status === 401) {
+    store.dispatch(push('/login'));
+  }
+  return Promise.reject(error);
+});
 
 // go to the home page
 store.dispatch(push('/home'));

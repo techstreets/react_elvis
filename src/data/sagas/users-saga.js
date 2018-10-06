@@ -1,18 +1,21 @@
 import axios from 'axios';
 import { call, put, takeLatest } from 'redux-saga/effects';
+import { fetchUsers } from '../../data/routines';
 
-
-function *fetchUsers() {
+function *fetchUsersHandler() {
   try {
+    yield put(fetchUsers.request());
     const users = yield call(
       axios.get, 'https://jsonplaceholder.typicode.com/users'
     );
-    yield put({type: 'USER_FETCH_SUCCEEDED', users: users.data});
-  } catch (e) {
-    yield put({type: 'USER_FETCH_FAILED', message: e.message});
+    yield put(fetchUsers.success({users: users.data}));
+  } catch (error) {
+    yield put(fetchUsers.failure({message: error.message}));
+  } finally {
+    yield put(fetchUsers.fulfill());
   }
 }
 
 export function *fetchUsersWatcherSaga() {
-  yield takeLatest('USER_FETCH', fetchUsers);
+  yield takeLatest(fetchUsers.TRIGGER, fetchUsersHandler);
 }

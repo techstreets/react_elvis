@@ -2,11 +2,12 @@ import _ from 'lodash';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { push } from 'connected-react-router';
+import { fetchUsers } from '../../data/routines';
 import HomePage from './home';
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    doFetchUsers: bindActionCreators(() => ({type: 'USER_FETCH'}), dispatch),
+    doFetchUsers: bindActionCreators(fetchUsers, dispatch),
     gotoAbout: bindActionCreators(() => push('/about'), dispatch),
   };
 };

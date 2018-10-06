@@ -1,3 +1,4 @@
+import { fetchUsers } from '../../data/routines';
 
 export const exampleDataReducer = (state = {}, action) => {
   console.log('example data reducer action', action);
@@ -9,11 +10,13 @@ export const exampleComplexDataReducer = (state = {}, action) => {
   return state;
 };
 
-export const usersReducer = (state = [], action) => {
-  if (action.type === 'USER_FETCH_SUCCEEDED') {
-    return action.users || [];
+export const usersReducer = (state = [], { type, payload }) => {
+  switch (type) {
+    case fetchUsers.SUCCESS:
+      return payload.users || [];
+    default:
+      return state;
   }
-  return state;
 };
 
 export default exampleDataReducer;

@@ -6,12 +6,14 @@ import HomePage from './home';
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    doFetchUsers: bindActionCreators(() => ({type: 'USER_FETCH'}), dispatch),
     gotoAbout: bindActionCreators(() => push('/about'), dispatch),
   };
 };
 
 const mapStateToProps = (state, ownProps = {}) => {
   return {
+    users: state.users,
     pathname: _.get(state, 'router.location.pathname'),
     ...ownProps
   };

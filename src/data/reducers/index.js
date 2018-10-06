@@ -1,18 +1,20 @@
 import generalDataRootReducer from './general-data-root-reducer';
 import exampleDataReducer, {
-  exampleComplexDataReducer
+  exampleComplexDataReducer, usersReducer
 } from './example-data-reducer';
 
 
 export const appDataReducersInitState = {
   exampleData: {},
-  exampleComplexData: {}
+  exampleComplexData: {},
+  users: [],
 };
 
 export default {
   combined: {
     exampleData: exampleDataReducer,
-    exampleComplexData: exampleComplexDataReducer
+    exampleComplexData: exampleComplexDataReducer,
+    users: usersReducer,
   },
   root: [generalDataRootReducer]
 };

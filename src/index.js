@@ -8,21 +8,27 @@ import createHistory from 'history/createHashHistory';
 import { connectRouter, routerMiddleware, push } from 'connected-react-router';
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import createSagaMiddleware from 'redux-saga';
 import appReducers, {
   appReducersInitState, mergeReducers, mergeReducersInitState
 } from './reducers';
 import appDataReducers, { appDataReducersInitState } from './data/reducers';
 import { eventsMiddleware } from './middlewares';
+import rootSaga from './data/sagas';
+
 
 const history = createHistory();
+const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
   connectRouter(history)(mergeReducers([appDataReducers, appReducers])),
   mergeReducersInitState([appReducersInitState, appDataReducersInitState]),
   composeWithDevTools(applyMiddleware(
     routerMiddleware(history),
+    sagaMiddleware,
     eventsMiddleware
   ))
 );
+sagaMiddleware.run(rootSaga);
 
 // on any unauthorized response go to login page
 axios.interceptors.response.use(null, error => {

@@ -20,11 +20,11 @@ The idea is to pack and combine most common libs in order to be able to quickly 
 - axios
 - lodash
 - moment && react-moment
+- redux-saga
 
 ## What's not packed YET
 
 - redux-form
-- redux-saga
 - redux-saga-routines
 - redux-saga-test-plan ?
 - redux-persist

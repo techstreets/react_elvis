@@ -8,20 +8,29 @@ The idea is to pack and combine most common libs in order to be able to quickly 
 - Reaact 16.2
 - eslint && eslint-plugin-react
 - webpack 3.x
-- dotenv
 - postcss
 - classnames
 - react-styleguidist
 - redux && react-redux && redux-devtools-extension
 - redux-actions
+- dotenv && dotenv-webpack
 
 ## What's not packed YET
 
+- axios
+- lodash
+- moment
 - react-router
+- history
 - redux-form
 - redux-saga
 - redux-persist
 - redux-logger
+- prop-types
+- react-modal
+- redux-saga
+- react-router-redux ???
+- postcss-global-import
 
 
 ## Folder Structure

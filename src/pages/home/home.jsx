@@ -7,10 +7,13 @@ class HomePage extends React.Component {
   constructor(props) {
     super(props);
   }
+
   render() {
+    const { pathname, gotoAbout } = this.props;
     return (
       <DefaultLayout className={styles.container}>
-        <h1>Home Page</h1>
+        <h1>Home Page @{pathname}</h1>
+        <button onClick={() => gotoAbout()}>Goto About</button>
       </DefaultLayout>
     );
   }

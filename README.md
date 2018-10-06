@@ -14,22 +14,21 @@ The idea is to pack and combine most common libs in order to be able to quickly 
 - redux && react-redux && redux-devtools-extension
 - redux-actions
 - dotenv && dotenv-webpack
+- history
+- react-router
+- ~~react-router-redux~~ connected-react-router
 
 ## What's not packed YET
 
 - axios
 - lodash
 - moment
-- react-router
-- history
 - redux-form
 - redux-saga
 - redux-persist
 - redux-logger
 - prop-types
 - react-modal
-- redux-saga
-- react-router-redux ???
 - postcss-global-import
 
 

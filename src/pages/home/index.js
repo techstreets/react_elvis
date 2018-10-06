@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { push } from 'connected-react-router';
@@ -10,9 +11,8 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const mapStateToProps = (state, ownProps = {}) => {
-  const { pathname } = state.router.location;
   return {
-    pathname,
+    pathname: _.get(state, 'router.location.pathname'),
     ...ownProps
   };
 };

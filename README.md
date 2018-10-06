@@ -19,10 +19,10 @@ The idea is to pack and combine most common libs in order to be able to quickly 
 - ~~react-router-redux~~ connected-react-router
 - axios
 - lodash
+- moment && react-moment
 
 ## What's not packed YET
 
-- moment
 - redux-form
 - redux-saga
 - redux-persist

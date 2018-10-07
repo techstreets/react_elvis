@@ -3,6 +3,7 @@ import styles from './home.css';
 import moment from 'moment';
 import Moment from 'react-moment';
 import DefaultLayout from '../../layouts';
+import Button from '@material-ui/core/Button';
 
 
 class HomePage extends React.Component {
@@ -24,9 +25,21 @@ class HomePage extends React.Component {
           {moment.now()}
         </Moment>
         <br/><br/>
-        <button onClick={() => gotoAbout()}>Goto About</button>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => gotoAbout()}
+        >
+          Goto About
+        </Button>
         <br/><br/>
-        <button onClick={() => gotoLogin()}>Login Page</button>
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={() => gotoLogin()}
+        >
+          Login Page
+        </Button>
         <ul>
           {users.map((user, index) => (
             <li key={index}>{user.name}</li>

@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import generalRootReducer from './general-root-reducer';
 import exampleReducer, { exampleComplexReducer } from './example-reducer';
-
+import { reducer as formReducer } from 'redux-form';
 
 export function mergeReducers(reducerSets = []) {
   const reducers = [];
@@ -39,7 +39,8 @@ export const appReducersInitState = {
 export default {
   combined: {
     example: exampleReducer,
-    exampleComplex: exampleComplexReducer
+    exampleComplex: exampleComplexReducer,
+    form: formReducer,
   },
   root: [generalRootReducer]
 };

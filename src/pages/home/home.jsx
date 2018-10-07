@@ -16,7 +16,7 @@ class HomePage extends React.Component {
   }
 
   render() {
-    const { pathname, gotoAbout, users } = this.props;
+    const { pathname, users, gotoAbout, gotoLogin } = this.props;
     return (
       <DefaultLayout className={styles.container}>
         <h1>Home Page @{pathname}</h1>
@@ -25,6 +25,8 @@ class HomePage extends React.Component {
         </Moment>
         <br/><br/>
         <button onClick={() => gotoAbout()}>Goto About</button>
+        <br/><br/>
+        <button onClick={() => gotoLogin()}>Login Page</button>
         <ul>
           {users.map((user, index) => (
             <li key={index}>{user.name}</li>

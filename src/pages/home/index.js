@@ -8,6 +8,7 @@ import HomePage from './home';
 const mapDispatchToProps = (dispatch) => {
   return {
     doFetchUsers: bindActionCreators(fetchUsers, dispatch),
+    gotoLogin: bindActionCreators(() => push('/login'), dispatch),
     gotoAbout: bindActionCreators(() => push('/about'), dispatch),
   };
 };

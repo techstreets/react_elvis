@@ -22,10 +22,10 @@ The idea is to pack and combine most common libs in order to be able to quickly 
 - moment && react-moment
 - redux-saga
 - redux-saga-routines
+- redux-form
 
 ## What's not packed YET
 
-- redux-form
 - redux-saga-test-plan ?
 - redux-persist
 - redux-logger

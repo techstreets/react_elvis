@@ -30,6 +30,7 @@ const postCSSConfig = {
     require('postcss-custom-media'),
     require('postcss-math'),
     require('postcss-color-function'),
+    require('postcss-global-import'),
   ]
 };
 

@@ -25,6 +25,7 @@ The idea is to pack and combine most common libs in order to be able to quickly 
 - redux-form
 - redux-persist
 - material-ui
+- postcss-global-import
 
 ## What's not packed YET
 
@@ -32,7 +33,6 @@ The idea is to pack and combine most common libs in order to be able to quickly 
 - redux-logger
 - prop-types
 - react-modal
-- postcss-global-import
 - localforage
 
 
@@ -118,6 +118,13 @@ Your app is ready to be deployed!
 
 See the section about [deployment](#deployment) for more information.
 
+## PostCSS
+
+Global imports could be simply added in any .css file like i.e.
+
+```css
+@global-import 'react-datepicker/dist/react-datepicker.css';
+```
 
 #### TODO: update documentation under
 

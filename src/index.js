@@ -7,6 +7,8 @@ import createHistory from 'history/createHashHistory';
 // import createHistory from 'history/createBrowserHistory';
 import { connectRouter, routerMiddleware, push } from 'connected-react-router';
 import { createStore, applyMiddleware } from 'redux';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
 import appReducers, {
@@ -16,11 +18,16 @@ import appDataReducers, { appDataReducersInitState } from './data/reducers';
 import { eventsMiddleware } from './middlewares';
 import rootSaga from './data/sagas';
 
-
+const persistConfig = {
+  key: 'root',
+  storage,
+};
 const history = createHistory();
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
-  connectRouter(history)(mergeReducers([appDataReducers, appReducers])),
+  persistReducer(persistConfig, connectRouter(history)(
+    mergeReducers([appDataReducers, appReducers])
+  )),
   mergeReducersInitState([appReducersInitState, appDataReducersInitState]),
   composeWithDevTools(applyMiddleware(
     routerMiddleware(history),
@@ -28,6 +35,7 @@ const store = createStore(
     eventsMiddleware
   ))
 );
+const persistor = persistStore(store);
 sagaMiddleware.run(rootSaga);
 
 // on any unauthorized response go to login page
@@ -43,7 +51,7 @@ axios.interceptors.response.use(null, error => {
 store.dispatch(push('/home'));
 
 ReactDOM.render(
-  <App store={store} history={history} />,
+  <App store={store} persistor={persistor} history={history} />,
   document.getElementById('root')
 );
 registerServiceWorker();

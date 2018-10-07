@@ -23,15 +23,16 @@ The idea is to pack and combine most common libs in order to be able to quickly 
 - redux-saga
 - redux-saga-routines
 - redux-form
+- redux-persist
 
 ## What's not packed YET
 
 - redux-saga-test-plan ?
-- redux-persist
 - redux-logger
 - prop-types
 - react-modal
 - postcss-global-import
+- localforage
 
 
 ## Folder Structure

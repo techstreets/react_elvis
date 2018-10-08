@@ -24,7 +24,7 @@ The idea is to pack and combine most common libs in order to be able to quickly 
 - redux-saga-routines
 - redux-form
 - redux-persist
-- material-ui
+- material-ui + material-ui/icons
 - postcss-global-import
 
 ## What's not packed YET
